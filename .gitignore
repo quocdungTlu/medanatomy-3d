@@ -10,3 +10,4 @@ dev-dist
 coverage
 # File model gốc chưa nén (giữ ở Drive / Git LFS)
 public/models/raw/
+e2e/out

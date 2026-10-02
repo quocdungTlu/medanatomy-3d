@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import type { ThreeEvent } from '@react-three/fiber'
 import { useAppStore } from '../store/useAppStore'
 import { structureIdByMesh, structuresById } from '../content'
-import { registerMeshes, unmappedMeshNames } from './registry'
+import { registerMeshes, sourceNameOf, unmappedMeshNames } from './registry'
 
 const HOVER = new THREE.Color('#ffd166')
 const SELECT = new THREE.Color('#38bdf8')
@@ -47,8 +47,12 @@ export function ModelRoot({ root }: { root: THREE.Object3D }) {
         if (hidden) continue
 
         const faded = s.xray && st.layer < s.xrayLayer && i.structureId !== highlightId
-        i.material.transparent = faded
-        i.material.opacity = faded ? 0.18 : 1
+        if (i.material.transparent !== faded) {
+          // Đổi `transparent` lúc runtime cần biên dịch lại shader (OPAQUE define ép alpha = 1)
+          i.material.transparent = faded
+          i.material.needsUpdate = true
+        }
+        i.material.opacity = faded ? 0.12 : 1
         i.material.depthWrite = !faded
 
         i.material.color.copy(i.baseColor)
@@ -74,7 +78,7 @@ export function ModelRoot({ root }: { root: THREE.Object3D }) {
     // Lấy mesh gần nhất có tên trong nội dung (đi ngược lên cha nếu cần)
     let o: THREE.Object3D | null = e.object
     while (o) {
-      const id = structureIdByMesh[o.name]
+      const id = structureIdByMesh[sourceNameOf(o)]
       if (id) return id
       o = o.parent
     }
@@ -113,9 +117,10 @@ function prepare(root: THREE.Object3D): MeshInfo[] {
   root.traverse((o) => {
     if (!(o as THREE.Mesh).isMesh) return
     const mesh = o as THREE.Mesh
-    const structureId = structureIdByMesh[mesh.name] ?? structureIdByMesh[mesh.parent?.name ?? '']
+    const name = sourceNameOf(mesh)
+    const structureId = structureIdByMesh[name] ?? (mesh.parent ? structureIdByMesh[sourceNameOf(mesh.parent)] : undefined)
     if (!structureId) {
-      unmappedMeshNames.add(mesh.name)
+      unmappedMeshNames.add(name)
       return
     }
     // Clone material để mỗi mesh đổi màu độc lập, giữ màu gốc để khôi phục

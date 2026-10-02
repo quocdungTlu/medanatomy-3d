@@ -31,3 +31,5 @@ npm run model:check
 ```
 
 Khi chưa có `heart.glb`, app tự dùng model sơ đồ hóa (`src/scene/placeholderHeart.ts`).
+
+Decoder Draco nằm ở `public/draco/` (copy từ `three/examples/jsm/libs/draco/gltf/`), không tải từ CDN để không phụ thuộc mạng ngoài.

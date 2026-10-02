@@ -11,10 +11,11 @@ export function Toolbar() {
   const { toggleXray, toggleGroup, setListOpen, resetView, showAll } = useAppStore.getState()
 
   const anyHidden = hiddenGroups.size > 0 || isolatedId !== null || xray
-  if (infoOpen) return null
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex flex-col gap-2 px-3 safe-bottom">
+    <div
+      className={`pointer-events-none absolute right-0 bottom-0 z-20 flex flex-col gap-2 px-3 safe-bottom transition-[left] ${listOpen ? 'left-0 sm:left-80' : 'left-0'} ${infoOpen ? 'hidden sm:flex sm:right-96' : ''}`}
+    >
       <div className="pointer-events-auto flex flex-wrap gap-1.5">
         {groupsOrdered.map((g) => {
           const hidden = hiddenGroups.has(g.id)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Scene, type ModelSource } from './scene/Scene'
+import { LoadingOverlay, Scene, type ModelSource } from './scene/Scene'
 import { Toolbar } from './components/Toolbar'
 import { StructureList } from './components/StructureList'
 import { InfoPanel } from './components/InfoPanel'
@@ -50,7 +50,10 @@ export default function App() {
         {source === 'checking' ? (
           <div className="flex h-full items-center justify-center text-sm text-slate-400">Đang chuẩn bị…</div>
         ) : (
-          <Scene source={source} />
+          <>
+            <Scene source={source} />
+            <LoadingOverlay />
+          </>
         )}
         {contextLost && <ContextLost />}
       </main>

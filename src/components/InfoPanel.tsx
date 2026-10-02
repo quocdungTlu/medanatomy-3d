@@ -15,7 +15,7 @@ export function InfoPanel() {
 
   return (
     <aside
-      className="absolute inset-x-0 bottom-0 z-30 max-h-[60%] overflow-y-auto rounded-t-2xl border-t border-line bg-panel/95 p-4 backdrop-blur safe-bottom sm:inset-y-0 sm:left-auto sm:right-0 sm:max-h-none sm:w-96 sm:rounded-none sm:border-l sm:border-t-0"
+      className="absolute inset-x-0 bottom-0 z-30 max-h-[50%] overflow-y-auto rounded-t-2xl border-t border-line bg-panel/95 p-4 backdrop-blur safe-bottom sm:inset-y-0 sm:left-auto sm:right-0 sm:max-h-none sm:w-96 sm:rounded-none sm:border-l sm:border-t-0"
       aria-label="Thông tin cấu trúc"
     >
       <div className="mb-3 flex items-start justify-between gap-3">

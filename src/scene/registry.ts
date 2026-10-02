@@ -22,3 +22,12 @@ export function boundingBoxOf(structureId: string): THREE.Box3 | null {
 
 /** Tên mesh có trong model nhưng không có trong JSON nội dung (để cảnh báo). */
 export const unmappedMeshNames = new Set<string>()
+
+/**
+ * Tên gốc của object trong model. GLTFLoader "làm sạch" node.name (khoảng trắng → _, bỏ / ( ) .),
+ * nên ưu tiên userData.za_name (extras giữ nguyên từ Z-Anatomy), sau đó mới tới name.
+ */
+export function sourceNameOf(o: THREE.Object3D): string {
+  const za = (o.userData as { za_name?: unknown })?.za_name
+  return typeof za === 'string' && za ? za : o.name
+}
