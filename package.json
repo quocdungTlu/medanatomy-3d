@@ -13,8 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "content:validate": "tsx scripts/validate-content.ts",
-    "model:check": "tsx scripts/check-meshes.ts",
-    "model:optimize": "gltf-transform optimize public/models/raw/heart.glb public/models/heart.glb --compress draco --texture-compress webp --texture-size 2048"
+    "model:check": "tsx scripts/check-meshes.mts",
+    "model:optimize": "gltf-transform optimize public/models/raw/heart.glb public/models/heart.glb --compress draco --texture-compress webp --texture-size 2048",
+    "model:extract": "tsx scripts/extract-heart.mts"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",
@@ -32,6 +33,7 @@
     "@gltf-transform/cli": "^4.1.0",
     "@gltf-transform/core": "^4.1.0",
     "@gltf-transform/extensions": "^4.1.0",
+    "@gltf-transform/functions": "^4.5.1",
     "@tailwindcss/vite": "^4.0.0",
     "@testing-library/jest-dom": "^6.6.0",
     "@testing-library/react": "^16.2.0",
@@ -45,6 +47,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
+    "meshoptimizer": "^1.3.0",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",

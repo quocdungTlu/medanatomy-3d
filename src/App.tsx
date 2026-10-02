@@ -4,6 +4,7 @@ import { Toolbar } from './components/Toolbar'
 import { StructureList } from './components/StructureList'
 import { InfoPanel } from './components/InfoPanel'
 import { QuizPanel } from './components/QuizPanel'
+import { About } from './components/About'
 import { useAppStore } from './store/useAppStore'
 import { content } from './content'
 
@@ -35,11 +36,14 @@ export default function App() {
             {source === 'placeholder' && <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-amber-300">model tạm</span>}
           </p>
         </div>
-        {mode === 'explore' && (
-          <button className="btn-primary" onClick={() => useAppStore.getState().startQuiz({ count: 10 })}>
-            Bắt đầu kiểm tra
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          <About />
+          {mode === 'explore' && (
+            <button className="btn-primary" onClick={() => useAppStore.getState().startQuiz({ count: 10 })}>
+              Bắt đầu kiểm tra
+            </button>
+          )}
+        </div>
       </header>
 
       <main className="relative flex-1">

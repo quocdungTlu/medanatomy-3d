@@ -52,6 +52,8 @@ export const ContentSchema = z.object({
   systemNameVi: z.string().min(1),
   version: z.string().min(1),
   modelUrl: z.string().min(1),
+  /** Dòng ghi công bắt buộc theo license của model, hiển thị trong app */
+  modelAttribution: z.array(z.string()).default([]),
   groups: z.array(GroupSchema).min(1),
   structures: z.array(StructureSchema).min(1),
   questions: z.array(QuestionSchema),
