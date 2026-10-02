@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+dev-dist
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage
+# File model gốc chưa nén (giữ ở Drive / Git LFS)
+public/models/raw/

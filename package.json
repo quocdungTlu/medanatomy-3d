@@ -1,0 +1,59 @@
+{
+  "name": "medanatomy-3d",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Web 3D học giải phẫu cho sinh viên Y – MVP hệ tim mạch",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run content:validate && tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "content:validate": "tsx scripts/validate-content.ts",
+    "model:check": "tsx scripts/check-meshes.ts",
+    "model:optimize": "gltf-transform optimize public/models/raw/heart.glb public/models/heart.glb --compress draco --texture-compress webp --texture-size 2048"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "@supabase/supabase-js": "^2.49.0",
+    "posthog-js": "^1.230.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.175.0",
+    "zod": "^3.24.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@gltf-transform/cli": "^4.1.0",
+    "@gltf-transform/core": "^4.1.0",
+    "@gltf-transform/extensions": "^4.1.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.175.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "draco3dgltf": "^1.5.7",
+    "eslint": "^9.20.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "jsdom": "^26.0.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.24.0",
+    "vite": "^6.1.0",
+    "vite-plugin-pwa": "^0.21.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
