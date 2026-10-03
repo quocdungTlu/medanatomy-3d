@@ -1,0 +1,6 @@
+.venv/
+data/cache/
+data/landing/
+data/standardized/
+data/chunks/
+__pycache__/

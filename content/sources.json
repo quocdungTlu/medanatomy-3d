@@ -1,0 +1,164 @@
+{
+  "version": "0.1.0",
+  "note": "Nguồn tham khảo. Loại: open = license tương thích (PD/CC BY/CC BY-SA, có thể chuyển thể); cite = chỉ trích dẫn (NC/ND hoặc bản quyền). DOI đã xác minh qua Crossref ngày 3/10/2026 trừ khi ghi khác.",
+  "sources": [
+    {
+      "id": "ta2",
+      "kind": "terminology",
+      "title": "Terminologia Anatomica, 2nd ed. (TA2)",
+      "publisher": "FIPAT – Federative International Programme for Anatomical Terminology",
+      "year": 2019,
+      "url": "https://fipat.library.dal.ca/ta2/",
+      "license": "cite",
+      "note": "Chuẩn thuật ngữ Latin quốc tế; bản CSV kèm trong repo Z-Anatomy"
+    },
+    {
+      "id": "gray1918",
+      "kind": "textbook",
+      "title": "Anatomy of the Human Body, 20th ed. – VI. The Arteries & The Heart",
+      "authors": [
+        "Henry Gray",
+        "Warren H. Lewis (ed.)"
+      ],
+      "year": 1918,
+      "url": "https://www.bartleby.com/107/138.html",
+      "license": "open",
+      "note": "Public domain; hình minh họa dùng được"
+    },
+    {
+      "id": "wiki_heart",
+      "kind": "encyclopedia",
+      "title": "Wikipedia – Heart và các bài về từng cấu trúc",
+      "url": "https://en.wikipedia.org/wiki/Heart",
+      "license": "open",
+      "note": "CC BY-SA 4.0, tương thích license model; ghi công khi chuyển thể"
+    },
+    {
+      "id": "openstax_ap_19",
+      "kind": "textbook",
+      "title": "Anatomy and Physiology 2e – 19.1 Heart Anatomy",
+      "authors": [
+        "J. Gordon Betts",
+        "Kelly A. Young",
+        "James A. Wise"
+      ],
+      "publisher": "OpenStax",
+      "year": 2022,
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+      "license": "cite",
+      "note": "CC BY-NC-SA 4.0 – điều khoản NC nên chỉ trích dẫn, không chuyển thể văn bản vào sản phẩm thu phí"
+    },
+    {
+      "id": "zanatomy",
+      "kind": "model",
+      "title": "Z-Anatomy – The open source atlas of anatomy",
+      "url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "license": "open",
+      "note": "CC BY-SA 4.0; nguồn mô hình 3D (từ BodyParts3D, CC BY-SA 2.1 JP)"
+    },
+    {
+      "id": "haissaguerre1998",
+      "kind": "article",
+      "title": "Spontaneous Initiation of Atrial Fibrillation by Ectopic Beats Originating in the Pulmonary Veins",
+      "authors": [
+        "Haïssaguerre M",
+        "et al."
+      ],
+      "journal": "New England Journal of Medicine",
+      "year": 1998,
+      "doi": "10.1056/NEJM199809033391003",
+      "url": "https://doi.org/10.1056/NEJM199809033391003",
+      "license": "cite",
+      "citedBy": 6193
+    },
+    {
+      "id": "ho2002mitral",
+      "kind": "article",
+      "title": "Anatomy of the mitral valve",
+      "authors": [
+        "Ho SY"
+      ],
+      "journal": "Heart",
+      "year": 2002,
+      "doi": "10.1136/heart.88.suppl_4.iv5",
+      "url": "https://doi.org/10.1136/heart.88.suppl_4.iv5",
+      "license": "cite",
+      "citedBy": 98
+    },
+    {
+      "id": "wilson2007svc",
+      "kind": "article",
+      "title": "Superior Vena Cava Syndrome with Malignant Causes",
+      "authors": [
+        "Wilson LD",
+        "Detterbeck FC",
+        "Yahalom J"
+      ],
+      "journal": "New England Journal of Medicine",
+      "year": 2007,
+      "doi": "10.1056/NEJMcp067190",
+      "url": "https://doi.org/10.1056/NEJMcp067190",
+      "license": "cite",
+      "citedBy": 433
+    },
+    {
+      "id": "carapetis2016rhd",
+      "kind": "article",
+      "title": "Acute rheumatic fever and rheumatic heart disease",
+      "authors": [
+        "Carapetis JR",
+        "et al."
+      ],
+      "journal": "Nature Reviews Disease Primers",
+      "year": 2016,
+      "doi": "10.1038/nrdp.2015.84",
+      "url": "https://doi.org/10.1038/nrdp.2015.84",
+      "license": "cite",
+      "citedBy": 535
+    },
+    {
+      "id": "levy1990lvh",
+      "kind": "article",
+      "title": "Prognostic Implications of Echocardiographically Determined Left Ventricular Mass in the Framingham Heart Study",
+      "authors": [
+        "Levy D",
+        "et al."
+      ],
+      "journal": "New England Journal of Medicine",
+      "year": 1990,
+      "doi": "10.1056/NEJM199005313222203",
+      "url": "https://doi.org/10.1056/NEJM199005313222203",
+      "license": "cite",
+      "citedBy": 4383
+    },
+    {
+      "id": "piazza2008aortic",
+      "kind": "article",
+      "title": "Anatomy of the Aortic Valvar Complex and Its Implications for Transcatheter Implantation of the Aortic Valve",
+      "authors": [
+        "Piazza N",
+        "et al."
+      ],
+      "journal": "Circulation: Cardiovascular Interventions",
+      "year": 2008,
+      "doi": "10.1161/CIRCINTERVENTIONS.108.780858",
+      "url": "https://doi.org/10.1161/CIRCINTERVENTIONS.108.780858",
+      "license": "cite",
+      "citedBy": 547
+    },
+    {
+      "id": "angelini2007coronary",
+      "kind": "article",
+      "title": "Coronary Artery Anomalies",
+      "authors": [
+        "Angelini P"
+      ],
+      "journal": "Circulation",
+      "year": 2007,
+      "doi": "10.1161/CIRCULATIONAHA.106.618082",
+      "url": "https://doi.org/10.1161/CIRCULATIONAHA.106.618082",
+      "license": "cite",
+      "citedBy": 691
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import raw from '../../content/cardiovascular.json'
-import { ContentSchema, validateReferences, type Content, type Structure } from './schema'
+import rawSources from '../../content/sources.json'
+import { ContentSchema, SourcesFileSchema, validateReferences, validateReferencesExist, type Content, type Source, type Structure } from './schema'
 
 const parsed = ContentSchema.safeParse(raw)
 if (!parsed.success) {
@@ -10,6 +11,13 @@ const refErrors = validateReferences(parsed.data)
 if (refErrors.length) throw new Error('Nội dung lỗi tham chiếu:\n' + refErrors.join('\n'))
 
 export const content: Content = parsed.data
+
+const parsedSources = SourcesFileSchema.safeParse(rawSources)
+if (!parsedSources.success) throw new Error('sources.json không hợp lệ: ' + JSON.stringify(parsedSources.error.issues, null, 2))
+export const sources: Source[] = parsedSources.data.sources
+export const sourcesById: Record<string, Source> = Object.fromEntries(sources.map((s) => [s.id, s]))
+const srcErrors = validateReferencesExist(content, sources)
+if (srcErrors.length) throw new Error('Lỗi tham chiếu nguồn:\n' + srcErrors.join('\n'))
 
 export const structuresById: Record<string, Structure> = Object.fromEntries(
   content.structures.map((s) => [s.id, s]),

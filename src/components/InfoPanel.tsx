@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
-import { isReviewed, structuresById } from '../content'
+import { isReviewed, sourcesById, structuresById } from '../content'
 import { reportContent, supabase } from '../lib/supabase'
 import { track } from '../lib/analytics'
 import { markViewed } from '../lib/progress'
@@ -47,6 +47,27 @@ export function InfoPanel() {
       {s.clinical && <Section title="Liên hệ lâm sàng">{s.clinical}</Section>}
       {s.mnemonic && <Section title="Mẹo nhớ">{s.mnemonic}</Section>}
       {s.source && <p className="mt-2 text-xs text-slate-500">Nguồn: {s.source}</p>}
+      {s.references.length > 0 && (
+        <details className="mt-2 text-xs text-slate-500">
+          <summary className="cursor-pointer select-none">Tài liệu tham khảo ({s.references.length})</summary>
+          <ul className="mt-1 space-y-1">
+            {s.references.map((id) => {
+              const r = sourcesById[id]
+              if (!r) return null
+              return (
+                <li key={id}>
+                  <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline">
+                    {r.authors?.[0] ? `${r.authors[0]}${r.authors.length > 1 ? ' và cs.' : ''} ` : ''}
+                    {r.title}
+                  </a>
+                  {r.journal && <span> · {r.journal}</span>}
+                  {r.year && <span> ({r.year})</span>}
+                </li>
+              )
+            })}
+          </ul>
+        </details>
+      )}
       {s.reviewedBy && (
         <p className="text-xs text-slate-500">
           Duyệt bởi {s.reviewedBy} · {s.reviewedAt}

@@ -48,7 +48,13 @@
       "description": "Buồng tim ở phía trên bên phải, nhận máu từ tĩnh mạch chủ trên, tĩnh mạch chủ dưới và xoang vành. Mặt trong có phần thành nhẵn và phần có cơ lược.",
       "function": "Thu nhận máu nghèo oxy từ toàn cơ thể và đẩy xuống tâm thất phải qua van ba lá.",
       "clinical": "Nút xoang nhĩ (nút tạo nhịp tự nhiên) nằm ở thành tâm nhĩ phải, gần lỗ tĩnh mạch chủ trên.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_ventricle",
@@ -63,7 +69,13 @@
       "description": "Buồng tim ở phía trước, tạo nên phần lớn mặt ức sườn của tim. Thành mỏng hơn tâm thất trái, mặt trong có nhiều bè cơ.",
       "function": "Bơm máu nghèo oxy lên phổi qua van động mạch phổi và thân động mạch phổi.",
       "clinical": "Phì đại thất phải gặp trong tăng áp động mạch phổi kéo dài.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "left_atrium",
@@ -78,7 +90,15 @@
       "description": "Buồng tim ở phía sau, nhận máu từ bốn tĩnh mạch phổi. Tạo nên phần lớn nền tim.",
       "function": "Thu nhận máu giàu oxy từ phổi và đẩy xuống tâm thất trái qua van hai lá.",
       "clinical": "Giãn nhĩ trái thường gặp trong hẹp van hai lá và là yếu tố nguy cơ của rung nhĩ.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "haissaguerre1998",
+        "carapetis2016rhd"
+      ]
     },
     {
       "id": "left_ventricle",
@@ -93,7 +113,14 @@
       "description": "Buồng tim có thành dày nhất, tạo nên mỏm tim và phần lớn mặt hoành của tim.",
       "function": "Bơm máu giàu oxy vào động mạch chủ để đi nuôi toàn cơ thể.",
       "clinical": "Phì đại thất trái là hậu quả thường gặp của tăng huyết áp kéo dài.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "levy1990lvh"
+      ]
     },
     {
       "id": "papillary_muscles_rv",
@@ -109,7 +136,13 @@
       "layer": 2,
       "description": "Ba cơ nhú (trước, dưới và vách) nằm trong tâm thất phải, nối với các lá van ba lá bằng thừng gân.",
       "function": "Co cùng tâm thất để giữ các lá van ba lá không lật ngược lên tâm nhĩ trong thì tâm thu.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "papillary_muscle_lv",
@@ -124,7 +157,14 @@
       "description": "Hai cơ nhú (trước và sau) nằm trong tâm thất trái, nối với hai lá van hai lá bằng thừng gân. Mô hình chỉ có cơ nhú sau; cơ nhú trước không có trong dữ liệu nguồn.",
       "function": "Giữ các lá van hai lá đóng kín trong thì tâm thu.",
       "clinical": "Đứt cơ nhú sau nhồi máu cơ tim gây hở van hai lá cấp.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "ho2002mitral"
+      ]
     },
     {
       "id": "tricuspid_valve",
@@ -141,7 +181,13 @@
       "function": "Ngăn máu trào ngược từ tâm thất phải lên tâm nhĩ phải trong thì tâm thu.",
       "clinical": "Nghe rõ nhất ở bờ trái xương ức, khoang liên sườn 4–5.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Valva atrioventricularis dextra"
+      "nameLatinTA2": "Valva atrioventricularis dextra",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "mitral_valve",
@@ -157,7 +203,15 @@
       "function": "Ngăn máu trào ngược từ tâm thất trái lên tâm nhĩ trái trong thì tâm thu.",
       "clinical": "Hẹp van hai lá thường do thấp tim; nghe rõ nhất ở mỏm tim.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Valva atrioventricularis sinistra"
+      "nameLatinTA2": "Valva atrioventricularis sinistra",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "ho2002mitral",
+        "carapetis2016rhd"
+      ]
     },
     {
       "id": "aortic_valve",
@@ -174,7 +228,14 @@
       "description": "Van bán nguyệt có ba lá: lá vành trái, lá vành phải và lá không vành. Phía trên các lá van là các xoang động mạch chủ.",
       "function": "Ngăn máu từ động mạch chủ chảy ngược về tâm thất trái trong thì tâm trương.",
       "clinical": "Động mạch vành trái và phải xuất phát từ xoang vành trái và phải ngay trên van.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "piazza2008aortic"
+      ]
     },
     {
       "id": "pulmonary_valve",
@@ -190,7 +251,13 @@
       "layer": 2,
       "description": "Van bán nguyệt có ba lá (trước, trái, phải), nằm ở lỗ thân động mạch phổi.",
       "function": "Ngăn máu từ thân động mạch phổi chảy ngược về tâm thất phải trong thì tâm trương.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "ascending_aorta",
@@ -205,7 +272,14 @@
       "description": "Đoạn đầu của động mạch chủ, dài khoảng 5 cm, đi từ tâm thất trái lên đến chỗ bắt đầu cung động mạch chủ.",
       "function": "Dẫn máu từ tâm thất trái; cho hai nhánh đầu tiên là động mạch vành trái và phải.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Aorta ascendens"
+      "nameLatinTA2": "Aorta ascendens",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "piazza2008aortic"
+      ]
     },
     {
       "id": "aortic_arch",
@@ -220,7 +294,13 @@
       "description": "Đoạn cong của động mạch chủ, uốn từ trước ra sau và sang trái, phía trên chỗ chia đôi của thân động mạch phổi.",
       "function": "Cho ba nhánh lớn cấp máu cho đầu, cổ và chi trên: thân cánh tay đầu, động mạch cảnh chung trái, động mạch dưới đòn trái.",
       "clinical": "Dây chằng động mạch (di tích ống động mạch) nối cung động mạch chủ với động mạch phổi trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "thoracic_aorta",
@@ -235,7 +315,13 @@
       "description": "Đoạn động mạch chủ xuống nằm trong trung thất sau, từ bờ dưới đốt sống ngực IV đến lỗ động mạch chủ của cơ hoành.",
       "function": "Cấp máu cho thành ngực và các tạng trong ngực qua các động mạch gian sườn sau, phế quản, thực quản.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Aorta thoracica"
+      "nameLatinTA2": "Aorta thoracica",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "brachiocephalic_trunk",
@@ -249,7 +335,13 @@
       "layer": 0,
       "description": "Nhánh đầu tiên và lớn nhất của cung động mạch chủ, chia thành động mạch cảnh chung phải và động mạch dưới đòn phải.",
       "function": "Cấp máu cho nửa phải của đầu, cổ và chi trên phải.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_common_carotid",
@@ -264,7 +356,13 @@
       "description": "Xuất phát từ thân cánh tay đầu, đi lên cổ trong bao cảnh và chia thành động mạch cảnh trong và cảnh ngoài.",
       "function": "Cấp máu cho đầu và cổ bên phải.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Carotis communis dextra"
+      "nameLatinTA2": "Carotis communis dextra",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "left_common_carotid",
@@ -279,7 +377,13 @@
       "description": "Xuất phát trực tiếp từ cung động mạch chủ, dài hơn bên phải vì có thêm đoạn trong ngực.",
       "function": "Cấp máu cho đầu và cổ bên trái.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Carotis communis sinistra"
+      "nameLatinTA2": "Carotis communis sinistra",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_subclavian",
@@ -293,7 +397,13 @@
       "layer": 0,
       "description": "Xuất phát từ thân cánh tay đầu, uốn cong qua đỉnh phổi và đi ra ngoài phía sau xương đòn.",
       "function": "Cấp máu cho chi trên phải, một phần cổ và não (qua động mạch đốt sống).",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "left_subclavian",
@@ -307,7 +417,13 @@
       "layer": 0,
       "description": "Nhánh thứ ba của cung động mạch chủ, đi lên rồi ra ngoài qua đỉnh phổi trái.",
       "function": "Cấp máu cho chi trên trái, một phần cổ và não.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "pulmonary_trunk",
@@ -322,7 +438,13 @@
       "layer": 0,
       "description": "Xuất phát từ tâm thất phải, dài khoảng 5 cm, đi lên và ra sau rồi chia thành động mạch phổi phải và trái dưới cung động mạch chủ.",
       "function": "Dẫn máu nghèo oxy từ tâm thất phải lên phổi.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_pulmonary_artery",
@@ -336,7 +458,13 @@
       "layer": 0,
       "description": "Nhánh dài hơn của thân động mạch phổi, đi ngang sang phải phía sau động mạch chủ lên và tĩnh mạch chủ trên để vào rốn phổi phải.",
       "function": "Dẫn máu nghèo oxy đến phổi phải.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "left_pulmonary_artery",
@@ -350,7 +478,13 @@
       "layer": 0,
       "description": "Nhánh ngắn hơn, đi sang trái phía trước động mạch chủ xuống để vào rốn phổi trái.",
       "function": "Dẫn máu nghèo oxy đến phổi trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "superior_vena_cava",
@@ -365,7 +499,14 @@
       "description": "Được tạo bởi hai tĩnh mạch cánh tay đầu hợp lại, đi xuống bên phải động mạch chủ lên và đổ vào phần trên tâm nhĩ phải.",
       "function": "Dẫn máu nghèo oxy từ đầu, cổ, chi trên và thành ngực về tim.",
       "clinical": "Hội chứng tĩnh mạch chủ trên: phù mặt, cổ và chi trên do khối u trung thất chèn ép.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "wilson2007svc"
+      ]
     },
     {
       "id": "inferior_vena_cava",
@@ -379,7 +520,13 @@
       "layer": 0,
       "description": "Tĩnh mạch lớn nhất cơ thể, đi qua lỗ tĩnh mạch chủ của cơ hoành ở mức đốt sống ngực VIII và đổ vào phần dưới tâm nhĩ phải. Mô hình chỉ có đoạn ngực.",
       "function": "Dẫn máu nghèo oxy từ phần cơ thể dưới cơ hoành về tim.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_brachiocephalic_vein",
@@ -393,7 +540,13 @@
       "layer": 0,
       "description": "Do tĩnh mạch cảnh trong phải và tĩnh mạch dưới đòn phải hợp thành sau khớp ức đòn phải, ngắn và đi gần thẳng đứng.",
       "function": "Cùng tĩnh mạch cánh tay đầu trái tạo nên tĩnh mạch chủ trên.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "left_brachiocephalic_vein",
@@ -407,7 +560,13 @@
       "layer": 0,
       "description": "Dài hơn bên phải, đi chếch sang phải phía sau cán ức, bắt chéo trước các nhánh của cung động mạch chủ.",
       "function": "Cùng tĩnh mạch cánh tay đầu phải tạo nên tĩnh mạch chủ trên.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "right_pulmonary_veins",
@@ -423,7 +582,14 @@
       "description": "Hai tĩnh mạch (trên và dưới) đi từ rốn phổi phải, phía sau tĩnh mạch chủ trên và tâm nhĩ phải, đổ vào tâm nhĩ trái.",
       "function": "Dẫn máu giàu oxy từ phổi phải về tâm nhĩ trái.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Vena pulmonalis dextra superior; Vena pulmonalis dextra inferior"
+      "nameLatinTA2": "Vena pulmonalis dextra superior; Vena pulmonalis dextra inferior",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "haissaguerre1998"
+      ]
     },
     {
       "id": "left_pulmonary_veins",
@@ -440,7 +606,14 @@
       "function": "Dẫn máu giàu oxy từ phổi trái về tâm nhĩ trái.",
       "clinical": "Tĩnh mạch phổi là nguồn phát sinh thường gặp của rung nhĩ; là đích của thủ thuật cô lập tĩnh mạch phổi.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Vena pulmonalis sinistra superior; Vena pulmonalis sinistra inferior"
+      "nameLatinTA2": "Vena pulmonalis sinistra superior; Vena pulmonalis sinistra inferior",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "haissaguerre1998"
+      ]
     },
     {
       "id": "left_coronary_artery",
@@ -455,7 +628,14 @@
       "description": "Xuất phát từ xoang động mạch chủ trái, thân chung ngắn (khoảng 1–2 cm) rồi chia thành nhánh gian thất trước và nhánh mũ.",
       "function": "Cấp máu cho phần lớn tâm thất trái, tâm nhĩ trái và vách gian thất.",
       "clinical": "Hẹp thân chung động mạch vành trái là tổn thương nguy hiểm, thường chỉ định phẫu thuật bắc cầu.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "angelini2007coronary"
+      ]
     },
     {
       "id": "anterior_interventricular_artery",
@@ -472,7 +652,14 @@
       "function": "Cấp máu cho thành trước hai tâm thất và hai phần ba trước của vách gian thất.",
       "clinical": "Tắc nhánh gian thất trước là nguyên nhân thường gặp nhất của nhồi máu cơ tim thành trước.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Arteria interventricularis anterior"
+      "nameLatinTA2": "Arteria interventricularis anterior",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "angelini2007coronary"
+      ]
     },
     {
       "id": "circumflex_artery",
@@ -487,7 +674,14 @@
       "description": "Nhánh của động mạch vành trái, chạy trong rãnh vành vòng ra sau bên trái tim.",
       "function": "Cấp máu cho tâm nhĩ trái và thành bên, thành sau tâm thất trái.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Arteria circumflexa cordis"
+      "nameLatinTA2": "Arteria circumflexa cordis",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "angelini2007coronary"
+      ]
     },
     {
       "id": "right_coronary_artery",
@@ -503,7 +697,14 @@
       "description": "Xuất phát từ xoang động mạch chủ phải, chạy trong rãnh vành phải ra sau, thường tận cùng bằng nhánh gian thất sau.",
       "function": "Cấp máu cho tâm nhĩ phải, tâm thất phải, thường cả nút xoang nhĩ, nút nhĩ thất và phần sau vách gian thất.",
       "clinical": "Nhồi máu do tắc động mạch vành phải thường kèm rối loạn nhịp chậm do thiếu máu nút nhĩ thất.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19",
+        "angelini2007coronary"
+      ]
     },
     {
       "id": "coronary_sinus",
@@ -517,7 +718,13 @@
       "layer": 0,
       "description": "Tĩnh mạch lớn nằm trong rãnh vành ở mặt sau tim, dài khoảng 2–3 cm, đổ vào tâm nhĩ phải giữa lỗ tĩnh mạch chủ dưới và van ba lá.",
       "function": "Thu nhận phần lớn máu tĩnh mạch của tim (tĩnh mạch tim lớn, giữa, nhỏ) đưa về tâm nhĩ phải.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "great_cardiac_vein",
@@ -532,7 +739,13 @@
       "description": "Bắt đầu ở mỏm tim, đi lên trong rãnh gian thất trước cùng nhánh gian thất trước, vòng sang trái trong rãnh vành rồi đổ vào xoang vành.",
       "function": "Dẫn máu tĩnh mạch từ thành trước tim về xoang vành.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Vena magna cordis"
+      "nameLatinTA2": "Vena magna cordis",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "middle_cardiac_vein",
@@ -547,7 +760,13 @@
       "description": "Đi trong rãnh gian thất sau cùng nhánh gian thất sau, đổ vào xoang vành.",
       "function": "Dẫn máu tĩnh mạch từ mặt hoành của tim về xoang vành.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Vena media cordis"
+      "nameLatinTA2": "Vena media cordis",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     },
     {
       "id": "inferior_vein_lv",
@@ -563,7 +782,13 @@
       "description": "Đi trên mặt hoành của tâm thất trái, đổ vào xoang vành hoặc tĩnh mạch tim lớn.",
       "function": "Dẫn máu tĩnh mạch từ mặt dưới tâm thất trái.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt",
-      "nameLatinTA2": "Vena inferior ventriculi sinistri"
+      "nameLatinTA2": "Vena inferior ventriculi sinistri",
+      "references": [
+        "ta2",
+        "gray1918",
+        "wiki_heart",
+        "openstax_ap_19"
+      ]
     }
   ],
   "questions": [

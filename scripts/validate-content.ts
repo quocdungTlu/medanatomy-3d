@@ -4,12 +4,15 @@
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { ContentSchema, validateReferences } from '../src/content/schema'
+import { ContentSchema, SourcesFileSchema, validateReferences, validateReferencesExist } from '../src/content/schema'
 
 const dir = join(process.cwd(), 'content')
 let failed = false
+const sourcesParsed = SourcesFileSchema.safeParse(JSON.parse(readFileSync(join(dir, 'sources.json'), 'utf8')))
+if (!sourcesParsed.success) { console.error('✗ sources.json sai schema'); for (const i of sourcesParsed.error.issues) console.error(`   ${i.path.join('.')}: ${i.message}`); process.exit(1) }
+console.log(`✓ sources.json: ${sourcesParsed.data.sources.length} nguồn`)
 
-for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+for (const file of readdirSync(dir).filter((f) => f.endsWith('.json') && f !== 'sources.json')) {
   const raw = JSON.parse(readFileSync(join(dir, file), 'utf8'))
   const parsed = ContentSchema.safeParse(raw)
   if (!parsed.success) {
@@ -18,7 +21,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
     for (const i of parsed.error.issues) console.error(`   ${i.path.join('.')}: ${i.message}`)
     continue
   }
-  const errors = validateReferences(parsed.data)
+  const errors = [...validateReferences(parsed.data), ...validateReferencesExist(parsed.data, sourcesParsed.data.sources)]
   if (errors.length) {
     failed = true
     console.error(`✗ ${file}: lỗi tham chiếu`)

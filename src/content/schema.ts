@@ -20,6 +20,8 @@ export const StructureSchema = z.object({
   /** Người duyệt chuyên môn. Thiếu = chưa duyệt, build sẽ cảnh báo. */
   reviewedBy: z.string().optional(),
   reviewedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  /** id nguồn trong content/sources.json */
+  references: z.array(z.string()).default([]),
 })
 
 export const GroupSchema = z.object({
@@ -101,5 +103,33 @@ export function validateReferences(content: Content): string[] {
       if (new Set(q.distractorIds).size !== 3) errors.push(`Câu ${q.id}: đáp án nhiễu bị trùng nhau`)
     }
   }
+  return errors
+}
+
+export const SourceSchema = z.object({
+  id: z.string().min(1),
+  kind: z.enum(['article', 'textbook', 'encyclopedia', 'terminology', 'model', 'guideline', 'other']),
+  title: z.string().min(1),
+  authors: z.array(z.string()).optional(),
+  journal: z.string().optional(),
+  publisher: z.string().optional(),
+  year: z.number().int().optional(),
+  doi: z.string().optional(),
+  url: z.string().url(),
+  /** open = license tương thích để chuyển thể; cite = chỉ trích dẫn */
+  license: z.enum(['open', 'cite']),
+  citedBy: z.number().int().optional(),
+  note: z.string().optional(),
+})
+export const SourcesFileSchema = z.object({ version: z.string(), note: z.string().optional(), sources: z.array(SourceSchema).min(1) })
+export type Source = z.infer<typeof SourceSchema>
+
+/** Mọi references trong nội dung phải tồn tại trong sources. */
+export function validateReferencesExist(content: Content, sources: Source[]): string[] {
+  const ids = new Set(sources.map((s) => s.id))
+  const errors: string[] = []
+  for (const s of content.structures) for (const r of s.references) if (!ids.has(r)) errors.push(`Cấu trúc ${s.id} tham chiếu nguồn không tồn tại: ${r}`)
+  const dup = sources.map((s) => s.id).filter((id, i, a) => a.indexOf(id) !== i)
+  for (const d of new Set(dup)) errors.push(`Trùng id nguồn: ${d}`)
   return errors
 }

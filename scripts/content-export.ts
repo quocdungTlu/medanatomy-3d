@@ -21,9 +21,9 @@ const byId = Object.fromEntries(content.structures.map((s) => [s.id, s]))
 writeFileSync(
   base + '.structures.csv',
   csv([
-    ['id', 'group', 'nameVi', 'nameLatin', 'nameLatinTA2', 'nameEn', 'description', 'function', 'clinical', 'mnemonic', 'source', 'status', 'reviewer', 'reviewedAt', 'note'],
+    ['id', 'group', 'nameVi', 'nameLatin', 'nameLatinTA2', 'nameEn', 'description', 'function', 'clinical', 'mnemonic', 'source', 'references', 'status', 'reviewer', 'reviewedAt', 'note'],
     ...content.structures.map((s) => [
-      s.id, s.group, s.nameVi, s.nameLatin, s.nameLatinTA2, s.nameEn, s.description, s.function, s.clinical, s.mnemonic, s.source,
+      s.id, s.group, s.nameVi, s.nameLatin, s.nameLatinTA2, s.nameEn, s.description, s.function, s.clinical, s.mnemonic, s.source, s.references.join(' '),
       s.reviewedBy ? 'Đã duyệt' : 'Chờ duyệt', s.reviewedBy, s.reviewedAt, '',
     ]),
   ]),
