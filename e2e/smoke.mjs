@@ -34,7 +34,7 @@ const run = async (name, viewport, isMobile) => {
   await page.getByRole('button', { name: /Bắt đầu kiểm tra/ }).click()
   await page.waitForTimeout(400)
   await page.screenshot({ path: `${OUT}/${name}-5a-setup.png` })
-  await page.getByRole('button', { name: 'Van tim' }).last().click()
+  await page.getByRole('dialog').getByRole('button', { name: 'Van tim' }).click()
   await page.getByRole('button', { name: 'Bắt đầu', exact: true }).click()
   await page.waitForTimeout(800)
   await page.screenshot({ path: `${OUT}/${name}-5-quiz.png` })

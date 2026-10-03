@@ -59,7 +59,11 @@ export function ModelRoot({ root }: { root: THREE.Object3D }) {
         i.material.emissive.set(0x000000)
         i.material.emissiveIntensity = 1
         if (s.lastAnswer && i.structureId === s.lastAnswer.correctId) {
-          i.material.emissive.copy(s.lastAnswer.correct ? CORRECT : WRONG)
+          // Đáp án đúng luôn xanh; nếu chọn sai thì cấu trúc đã chọn đỏ
+          i.material.emissive.copy(CORRECT)
+          i.material.emissiveIntensity = 0.6
+        } else if (s.lastAnswer && !s.lastAnswer.correct && i.structureId === s.lastAnswer.chosenId) {
+          i.material.emissive.copy(WRONG)
           i.material.emissiveIntensity = 0.6
         } else if (i.structureId === highlightId) {
           i.material.emissive.copy(SELECT)

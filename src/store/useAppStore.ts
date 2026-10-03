@@ -22,7 +22,7 @@ interface AppState {
   infoOpen: boolean
   quiz: QuizSession | null
   /** Phản hồi câu vừa trả lời để hiện UI 1–2 giây */
-  lastAnswer: { correct: boolean; correctId: string } | null
+  lastAnswer: { correct: boolean; correctId: string; chosenId: string } | null
   /** Tăng để báo CameraRig reset về vị trí ban đầu */
   resetViewNonce: number
   /** WebGL context bị mất (thiết bị yếu, khóa màn hình) */
@@ -105,7 +105,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     if (!next) return
     const last = next.answers[next.answers.length - 1]
     track('quiz_answer', { questionId: last.questionId, correct: last.correct, timeMs: last.timeMs })
-    set({ quiz: next, lastAnswer: { correct: last.correct, correctId: last.correctId } })
+    set({ quiz: next, lastAnswer: { correct: last.correct, correctId: last.correctId, chosenId: last.chosenId } })
     if (next.finishedAt) {
       const correct = next.answers.filter((a) => a.correct).length
       track('quiz_finish', { correct, total: next.questions.length, durationMs: next.finishedAt - next.startedAt })

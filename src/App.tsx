@@ -5,6 +5,7 @@ import { StructureList } from './components/StructureList'
 import { InfoPanel } from './components/InfoPanel'
 import { QuizPanel } from './components/QuizPanel'
 import { About } from './components/About'
+import { AuthButton } from './components/AuthButton'
 import { QuizSetup } from './components/QuizSetup'
 import { Onboarding } from './components/Onboarding'
 import { hasOnboarded } from './lib/localHistory'
@@ -42,6 +43,7 @@ export default function App() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <AuthButton />
           <About />
           {mode === 'explore' && (
             <button className="btn-primary" onClick={() => setSetupOpen(true)}>

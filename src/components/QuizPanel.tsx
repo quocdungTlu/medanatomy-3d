@@ -4,6 +4,8 @@ import { content, structuresById } from '../content'
 import { currentQuestion, nameOptions, score, wrongAnswers } from '../quiz/engine'
 import { saveQuizSession } from '../lib/supabase'
 import { appendHistory } from '../lib/localHistory'
+import { renderResultImage, shareOrDownload } from '../lib/shareImage'
+import { track } from '../lib/analytics'
 import type { NameQuestion } from '../content/schema'
 
 /** Panel quiz: câu hỏi, tiến độ, phản hồi đúng/sai, màn kết quả. */
@@ -74,8 +76,18 @@ export function QuizPanel() {
           <button className="btn-primary" onClick={() => startQuiz({ count: quiz.questions.length, tags: quiz.tags })}>
             Làm lại
           </button>
+          <button
+            className="btn-ghost"
+            onClick={async () => {
+              const blob = await renderResultImage(quiz, content.systemNameVi, location.origin)
+              const how = await shareOrDownload(blob, `Mình được ${sc.correct}/${sc.total} thi chạy trạm ${content.systemNameVi} trên MedAnatomy 3D`)
+              track('share_result', { how, correct: sc.correct, total: sc.total })
+            }}
+          >
+            Chia sẻ
+          </button>
           <button className="btn-ghost" onClick={exitQuiz}>
-            Về chế độ xem
+            Về
           </button>
         </div>
       </aside>
