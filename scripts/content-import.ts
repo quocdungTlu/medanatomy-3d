@@ -13,7 +13,7 @@ if (!csvPath) { console.error('Thiếu đường dẫn CSV'); process.exit(1) }
 function parseCsv(text: string): string[][] {
   const rows: string[][] = []
   let row: string[] = [], cell = '', q = false
-  const s = text.replace(/^﻿/, '')
+  const s = text.replace(/^\uFEFF/, '')
   for (let i = 0; i < s.length; i++) {
     const c = s[i]
     if (q) {

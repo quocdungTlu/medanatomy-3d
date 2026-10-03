@@ -5,6 +5,9 @@ import { StructureList } from './components/StructureList'
 import { InfoPanel } from './components/InfoPanel'
 import { QuizPanel } from './components/QuizPanel'
 import { About } from './components/About'
+import { QuizSetup } from './components/QuizSetup'
+import { Onboarding } from './components/Onboarding'
+import { hasOnboarded } from './lib/localHistory'
 import { useAppStore } from './store/useAppStore'
 import { content } from './content'
 
@@ -12,6 +15,8 @@ export default function App() {
   const [source, setSource] = useState<ModelSource | 'checking'>('checking')
   const mode = useAppStore((s) => s.mode)
   const contextLost = useAppStore((s) => s.contextLost)
+  const [setupOpen, setSetupOpen] = useState(false)
+  const [onboarding, setOnboarding] = useState(() => !hasOnboarded())
 
   // Có file .glb thật thì dùng, không thì dùng model placeholder để phát triển
   useEffect(() => {
@@ -39,7 +44,7 @@ export default function App() {
         <div className="flex items-center gap-2">
           <About />
           {mode === 'explore' && (
-            <button className="btn-primary" onClick={() => useAppStore.getState().startQuiz({ count: 10 })}>
+            <button className="btn-primary" onClick={() => setSetupOpen(true)}>
               Bắt đầu kiểm tra
             </button>
           )}
@@ -67,6 +72,8 @@ export default function App() {
       ) : (
         <QuizPanel />
       )}
+      {setupOpen && <QuizSetup onClose={() => setSetupOpen(false)} />}
+      {onboarding && source !== 'checking' && <Onboarding onDone={() => setOnboarding(false)} />}
     </div>
   )
 }

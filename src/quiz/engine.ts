@@ -11,6 +11,8 @@ export interface QuizAnswer {
 
 export interface QuizSession {
   questions: Question[]
+  /** Chủ đề đã lọc, để "Làm lại" cùng chủ đề và lưu lịch sử */
+  tags?: string[]
   index: number
   answers: QuizAnswer[]
   startedAt: number
@@ -44,7 +46,7 @@ export function pickQuestions(pool: Question[], opts: QuizOptions = {}): Questio
 export function startSession(pool: Question[], opts: QuizOptions = {}, now = Date.now()): QuizSession {
   const questions = pickQuestions(pool, opts)
   if (questions.length === 0) throw new Error('Không có câu hỏi phù hợp')
-  return { questions, index: 0, answers: [], startedAt: now }
+  return { questions, tags: opts.tags, index: 0, answers: [], startedAt: now }
 }
 
 export function currentQuestion(s: QuizSession): Question | undefined {

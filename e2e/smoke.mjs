@@ -9,6 +9,7 @@ const browser = await chromium.launch({
 const run = async (name, viewport, isMobile) => {
   const ctx = await browser.newContext({ viewport, isMobile, hasTouch: isMobile, deviceScaleFactor: 1 })
   const page = await ctx.newPage()
+  await ctx.addInitScript(() => localStorage.setItem('medanatomy.onboarded.v1', '1'))
   const logs = []
   page.on('console', (m) => logs.push(`[${m.type()}] ${m.text()}`))
   page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`))
@@ -31,6 +32,10 @@ const run = async (name, viewport, isMobile) => {
   await page.getByRole('button', { name: /Xuyên thấu/ }).click()
   // Quiz
   await page.getByRole('button', { name: /Bắt đầu kiểm tra/ }).click()
+  await page.waitForTimeout(400)
+  await page.screenshot({ path: `${OUT}/${name}-5a-setup.png` })
+  await page.getByRole('button', { name: 'Van tim' }).last().click()
+  await page.getByRole('button', { name: 'Bắt đầu', exact: true }).click()
   await page.waitForTimeout(800)
   await page.screenshot({ path: `${OUT}/${name}-5-quiz.png` })
   const q = await page.locator('aside').last().innerText()

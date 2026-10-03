@@ -3,6 +3,7 @@ import { useAppStore } from '../store/useAppStore'
 import { content, structuresById } from '../content'
 import { currentQuestion, nameOptions, score, wrongAnswers } from '../quiz/engine'
 import { saveQuizSession } from '../lib/supabase'
+import { appendHistory } from '../lib/localHistory'
 import type { NameQuestion } from '../content/schema'
 
 /** Panel quiz: câu hỏi, tiến độ, phản hồi đúng/sai, màn kết quả. */
@@ -22,6 +23,7 @@ export function QuizPanel() {
   useEffect(() => {
     if (!quiz?.finishedAt) return
     const sc = score(quiz)
+    appendHistory({ at: new Date(quiz.finishedAt).toISOString(), system: content.system, tags: quiz.tags ?? [], correct: sc.correct, total: sc.total, durationMs: sc.durationMs })
     void saveQuizSession({
       system: content.system,
       score: sc.correct,
@@ -69,7 +71,7 @@ export function QuizPanel() {
           </section>
         )}
         <div className="mt-4 flex gap-2">
-          <button className="btn-primary" onClick={() => startQuiz({ count: 10 })}>
+          <button className="btn-primary" onClick={() => startQuiz({ count: quiz.questions.length, tags: quiz.tags })}>
             Làm lại
           </button>
           <button className="btn-ghost" onClick={exitQuiz}>
