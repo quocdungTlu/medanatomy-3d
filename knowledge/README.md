@@ -6,6 +6,9 @@ Thư mục Python độc lập với app, tái sử dụng code từ hai repo c�
 | --- | --- | --- |
 | `src/collect_refs.py` | Day-10 `src/ingestion/crossref.py` | Tìm bài báo khoa học trên Crossref theo `queries.json` (69 truy vấn / 35 cấu trúc), xếp theo số trích dẫn, cache, polite pool |
 | `src/build_sources.py` | — | Xác minh DOI đã chọn trong `selected.json`, ghi vào `content/sources.json` và `references` của cấu trúc |
+| `src/collect_openalex.py` | — | Bổ sung từ OpenAlex (trích dẫn, open access, abstract) |
+| `src/fetch_wikipedia.py` | — | Phần mở đầu Wikipedia + revision id (CC BY-SA) làm tài liệu soạn nội dung |
+| `src/rank_refs.py` | Day-10 `evaluation/metrics.py` (ý tưởng chấm điểm) | Gộp Crossref+OpenAlex, chấm điểm, ghi `data/shortlist.md` cho người duyệt |
 | `src/ingest_docs.py` | Day08 `task3_convert_markdown.py`, `task4_chunking_indexing.py` | PDF/DOCX giáo trình → Markdown → chunk theo heading (cho cố vấn trích dẫn trang; nền cho AI trợ giảng sau MVP) |
 
 ```bash
@@ -13,8 +16,9 @@ cd knowledge
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-python -m src.collect_refs --mailto you@example.com   # ~70 request, ~2 phút
-# xem data/candidates/*.json, chép DOI muốn dùng vào selected.json
+bash pull_all.sh you@example.com   # Crossref + OpenAlex + Wikipedia + shortlist (~5 phút)
+# (hoặc chạy từng bước: collect_refs, collect_openalex, fetch_wikipedia, rank_refs)
+# xem data/shortlist.md, chép DOI muốn dùng vào selected.json
 python -m src.build_sources you@example.com
 cd .. && npm run content:validate
 

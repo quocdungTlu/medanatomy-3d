@@ -17,7 +17,8 @@
     "model:optimize": "gltf-transform optimize public/models/raw/heart.glb public/models/heart.glb --compress draco --texture-compress webp --texture-size 2048",
     "model:extract": "tsx scripts/extract-heart.mts",
     "content:export": "tsx scripts/content-export.ts",
-    "content:import": "tsx scripts/content-import.ts"
+    "content:import": "tsx scripts/content-import.ts",
+    "content:sql": "tsx scripts/content-to-sql.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",
