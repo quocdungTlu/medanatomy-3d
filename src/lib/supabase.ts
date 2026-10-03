@@ -29,3 +29,16 @@ export async function reportContent(structureId: string, message: string): Promi
     .insert({ structure_id: structureId, message, user_id: auth.user?.id ?? null })
   return !error
 }
+
+/** Lịch sử quiz của người dùng đã đăng nhập, mới nhất trước. Rỗng nếu chưa đăng nhập hoặc chưa cấu hình. */
+export async function fetchRemoteHistory(limit = 5): Promise<{ at: string; system: string; tags: string[]; correct: number; total: number; durationMs: number }[]> {
+  if (!supabase) return []
+  const { data: auth } = await supabase.auth.getUser()
+  if (!auth.user) return []
+  const { data } = await supabase
+    .from('quiz_sessions')
+    .select('created_at, system, score, total, duration_s, answers')
+    .order('created_at', { ascending: false })
+    .limit(limit)
+  return (data ?? []).map((r) => ({ at: r.created_at, system: r.system, tags: [], correct: r.score, total: r.total, durationMs: r.duration_s * 1000 }))
+}

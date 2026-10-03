@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
-import { groupsOrdered, isReviewed, searchStructures } from '../content'
+import { content, groupsOrdered, isReviewed, searchStructures } from '../content'
+import { readViewed, subscribeViewed } from '../lib/progress'
 
 /** Danh sách cấu trúc theo nhóm, tìm kiếm không dấu. Desktop: cột trái; mobile: bottom sheet. */
 export function StructureList() {
@@ -8,6 +9,8 @@ export function StructureList() {
   const selectedId = useAppStore((s) => s.selectedId)
   const isolatedId = useAppStore((s) => s.isolatedId)
   const [q, setQ] = useState('')
+  const [viewed, setViewed] = useState(() => readViewed())
+  useEffect(() => subscribeViewed(() => setViewed(readViewed())), [])
 
   const results = useMemo(() => searchStructures(q), [q])
   const grouped = useMemo(
@@ -36,6 +39,13 @@ export function StructureList() {
           ✕
         </button>
       </div>
+      <div className="px-3 pb-2">
+        <div className="mb-1 flex justify-between text-[11px] text-slate-500">
+          <span>Đã xem {viewed.size}/{content.structures.length} cấu trúc</span>
+          <span>{Math.round((viewed.size / content.structures.length) * 100)}%</span>
+        </div>
+        <div className="h-1 overflow-hidden rounded bg-slate-800"><div className="h-full bg-emerald-400" style={{ width: `${(viewed.size / content.structures.length) * 100}%` }} /></div>
+      </div>
       <div className="flex-1 overflow-y-auto px-2 pb-4 safe-bottom">
         {grouped.length === 0 && <p className="px-2 py-6 text-center text-sm text-slate-500">Không tìm thấy</p>}
         {grouped.map(({ group, items }) => (
@@ -55,6 +65,7 @@ export function StructureList() {
                       aria-current={active ? 'true' : undefined}
                     >
                       <span className="text-sm">
+                        {viewed.has(s.id) && <span className="mr-1 text-emerald-400" aria-label="Đã xem">✓</span>}
                         {s.nameVi}
                         {!isReviewed(s) && <span className="ml-1.5 text-[10px] text-amber-400">nháp</span>}
                       </span>

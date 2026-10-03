@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { content, groupsOrdered } from '../content'
 import { useAppStore } from '../store/useAppStore'
-import { readHistory } from '../lib/localHistory'
+import { readHistory, type LocalQuizRecord } from '../lib/localHistory'
+import { fetchRemoteHistory } from '../lib/supabase'
 
 /** Hộp chọn chủ đề và số câu trước khi bắt đầu Quiz. */
 export function QuizSetup({ onClose }: { onClose: () => void }) {
   const [tags, setTags] = useState<string[]>([])
   const [count, setCount] = useState(10)
-  const history = readHistory().slice(0, 5)
+  const [history, setHistory] = useState<LocalQuizRecord[]>(() => readHistory().slice(0, 5))
+  useEffect(() => {
+    fetchRemoteHistory(5).then((remote) => { if (remote.length) setHistory(remote) }).catch(() => {})
+  }, [])
 
   const available = tags.length ? content.questions.filter((q) => q.tags.some((t) => tags.includes(t))) : content.questions
   const toggle = (id: string) => setTags((t) => (t.includes(id) ? t.filter((x) => x !== id) : [...t, id]))

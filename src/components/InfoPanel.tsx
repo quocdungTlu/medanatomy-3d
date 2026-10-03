@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
 import { isReviewed, structuresById } from '../content'
 import { reportContent, supabase } from '../lib/supabase'
 import { track } from '../lib/analytics'
+import { markViewed } from '../lib/progress'
 
 /** Bảng thông tin cấu trúc đang chọn. Mobile: bottom sheet; desktop: panel phải. */
 export function InfoPanel() {
@@ -10,6 +11,7 @@ export function InfoPanel() {
   const open = useAppStore((s) => s.infoOpen)
   const isolatedId = useAppStore((s) => s.isolatedId)
   const s = selectedId ? structuresById[selectedId] : undefined
+  useEffect(() => { if (open && selectedId) markViewed(selectedId) }, [open, selectedId])
   if (!open || !s) return null
   const { select, isolate } = useAppStore.getState()
 

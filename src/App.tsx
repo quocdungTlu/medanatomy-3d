@@ -8,7 +8,10 @@ import { About } from './components/About'
 import { AuthButton } from './components/AuthButton'
 import { QuizSetup } from './components/QuizSetup'
 import { Onboarding } from './components/Onboarding'
-import { hasOnboarded } from './lib/localHistory'
+import { hasOnboarded, readHistory } from './lib/localHistory'
+import { HoverLabel } from './components/HoverLabel'
+import { Survey } from './components/Survey'
+import { surveyDone } from './lib/survey'
 import { useAppStore } from './store/useAppStore'
 import { content } from './content'
 
@@ -18,6 +21,13 @@ export default function App() {
   const contextLost = useAppStore((s) => s.contextLost)
   const [setupOpen, setSetupOpen] = useState(false)
   const [onboarding, setOnboarding] = useState(() => !hasOnboarded())
+  const [survey, setSurvey] = useState(false)
+  const quizFinished = useAppStore((s) => s.quiz?.finishedAt)
+
+  // Sau quiz thứ 3 (và chưa khảo sát): hỏi 3 câu
+  useEffect(() => {
+    if (quizFinished && !surveyDone() && readHistory().length >= 3) setSurvey(true)
+  }, [quizFinished])
 
   // Có file .glb thật thì dùng, không thì dùng model placeholder để phát triển
   useEffect(() => {
@@ -74,7 +84,9 @@ export default function App() {
       ) : (
         <QuizPanel />
       )}
+      <HoverLabel />
       {setupOpen && <QuizSetup onClose={() => setSetupOpen(false)} />}
+      {survey && <Survey onClose={() => setSurvey(false)} />}
       {onboarding && source !== 'checking' && <Onboarding onDone={() => setOnboarding(false)} />}
     </div>
   )
