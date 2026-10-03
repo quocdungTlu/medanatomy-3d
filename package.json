@@ -15,7 +15,9 @@
     "content:validate": "tsx scripts/validate-content.ts",
     "model:check": "tsx scripts/check-meshes.mts",
     "model:optimize": "gltf-transform optimize public/models/raw/heart.glb public/models/heart.glb --compress draco --texture-compress webp --texture-size 2048",
-    "model:extract": "tsx scripts/extract-heart.mts"
+    "model:extract": "tsx scripts/extract-heart.mts",
+    "content:export": "tsx scripts/content-export.ts",
+    "content:import": "tsx scripts/content-import.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",
