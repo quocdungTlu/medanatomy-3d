@@ -33,3 +33,11 @@ npm run model:check
 Khi chưa có `heart.glb`, app tự dùng model sơ đồ hóa (`src/scene/placeholderHeart.ts`).
 
 Decoder Draco nằm ở `public/draco/` (copy từ `three/examples/jsm/libs/draco/gltf/`), không tải từ CDN để không phụ thuộc mạng ngoài.
+
+## Kiểm tra với file .blend gốc (3/10/2026)
+
+Mở `Z-Anatomy.zip/Startup.blend` (Blender 5.1 dạng module `bpy`): collection *Heart* có đúng 17 mesh, trùng với bản xuất.
+Các collection con *Cardiac septa*, *Epicardium*, *Myocardium*, *Valvular complex* rỗng. Kết luận: lá trước van hai lá,
+lá trước van ba lá và cơ nhú trước thất trái **không có trong dữ liệu nguồn** (BodyParts3D). Object đuôi `.j`/`.t`/`.g`
+là đường chỉ và chữ nhãn, không phải hình. Mesh "Posterior leaflet of left atrioventricular valve" (7.640 tam giác, tâm ở
+bên trái tim) nhiều khả năng là toàn bộ van hai lá; nhóm cha "Right atrioventricular valve.g" là nhãn sai trong nguồn.

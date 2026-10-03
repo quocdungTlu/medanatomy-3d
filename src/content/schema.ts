@@ -5,6 +5,8 @@ export const StructureSchema = z.object({
   meshNames: z.array(z.string().min(1)).min(1, 'Mỗi cấu trúc cần ít nhất 1 mesh'),
   nameVi: z.string().min(1),
   nameLatin: z.string().min(1),
+  /** Thuật ngữ theo Terminologia Anatomica 2 (2019) nếu khác tên giáo trình đang dùng */
+  nameLatinTA2: z.string().optional(),
   nameEn: z.string().optional(),
   group: z.string().min(1),
   layer: z.number().int().min(0).max(5),

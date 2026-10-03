@@ -121,7 +121,7 @@
       "nameEn": "Papillary muscles of left ventricle",
       "group": "chambers",
       "layer": 2,
-      "description": "Hai cơ nhú (trước và sau/dưới) nằm trong tâm thất trái, nối với hai lá van hai lá bằng thừng gân. Mô hình hiện chỉ có cơ nhú dưới.",
+      "description": "Hai cơ nhú (trước và sau) nằm trong tâm thất trái, nối với hai lá van hai lá bằng thừng gân. Mô hình chỉ có cơ nhú sau; cơ nhú trước không có trong dữ liệu nguồn.",
       "function": "Giữ các lá van hai lá đóng kín trong thì tâm thu.",
       "clinical": "Đứt cơ nhú sau nhồi máu cơ tim gây hở van hai lá cấp.",
       "source": "BẢN NHÁP – chưa có cố vấn duyệt"
@@ -137,10 +137,11 @@
       "nameEn": "Tricuspid valve",
       "group": "valves",
       "layer": 2,
-      "description": "Van nhĩ thất phải, có ba lá van (trước, sau và vách), nằm giữa tâm nhĩ phải và tâm thất phải. Mô hình hiện có lá sau và lá vách.",
+      "description": "Van nhĩ thất phải, có ba lá van (trước, sau và vách), nằm giữa tâm nhĩ phải và tâm thất phải. Mô hình có lá sau và lá vách; lá trước không có trong dữ liệu nguồn.",
       "function": "Ngăn máu trào ngược từ tâm thất phải lên tâm nhĩ phải trong thì tâm thu.",
       "clinical": "Nghe rõ nhất ở bờ trái xương ức, khoang liên sườn 4–5.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Valva atrioventricularis dextra"
     },
     {
       "id": "mitral_valve",
@@ -152,10 +153,11 @@
       "nameEn": "Mitral valve",
       "group": "valves",
       "layer": 2,
-      "description": "Van nhĩ thất trái, có hai lá van (lá trước và lá sau), nằm giữa tâm nhĩ trái và tâm thất trái. Mô hình hiện có lá sau.",
+      "description": "Van nhĩ thất trái, có hai lá van (lá trước và lá sau), nằm giữa tâm nhĩ trái và tâm thất trái. Mô hình hiển thị van như một khối, không tách riêng hai lá.",
       "function": "Ngăn máu trào ngược từ tâm thất trái lên tâm nhĩ trái trong thì tâm thu.",
       "clinical": "Hẹp van hai lá thường do thấp tim; nghe rõ nhất ở mỏm tim.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Valva atrioventricularis sinistra"
     },
     {
       "id": "aortic_valve",
@@ -202,7 +204,8 @@
       "layer": 0,
       "description": "Đoạn đầu của động mạch chủ, dài khoảng 5 cm, đi từ tâm thất trái lên đến chỗ bắt đầu cung động mạch chủ.",
       "function": "Dẫn máu từ tâm thất trái; cho hai nhánh đầu tiên là động mạch vành trái và phải.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Aorta ascendens"
     },
     {
       "id": "aortic_arch",
@@ -231,7 +234,8 @@
       "layer": 0,
       "description": "Đoạn động mạch chủ xuống nằm trong trung thất sau, từ bờ dưới đốt sống ngực IV đến lỗ động mạch chủ của cơ hoành.",
       "function": "Cấp máu cho thành ngực và các tạng trong ngực qua các động mạch gian sườn sau, phế quản, thực quản.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Aorta thoracica"
     },
     {
       "id": "brachiocephalic_trunk",
@@ -259,7 +263,8 @@
       "layer": 0,
       "description": "Xuất phát từ thân cánh tay đầu, đi lên cổ trong bao cảnh và chia thành động mạch cảnh trong và cảnh ngoài.",
       "function": "Cấp máu cho đầu và cổ bên phải.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Carotis communis dextra"
     },
     {
       "id": "left_common_carotid",
@@ -273,7 +278,8 @@
       "layer": 0,
       "description": "Xuất phát trực tiếp từ cung động mạch chủ, dài hơn bên phải vì có thêm đoạn trong ngực.",
       "function": "Cấp máu cho đầu và cổ bên trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Carotis communis sinistra"
     },
     {
       "id": "right_subclavian",
@@ -416,7 +422,8 @@
       "layer": 0,
       "description": "Hai tĩnh mạch (trên và dưới) đi từ rốn phổi phải, phía sau tĩnh mạch chủ trên và tâm nhĩ phải, đổ vào tâm nhĩ trái.",
       "function": "Dẫn máu giàu oxy từ phổi phải về tâm nhĩ trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Vena pulmonalis dextra superior; Vena pulmonalis dextra inferior"
     },
     {
       "id": "left_pulmonary_veins",
@@ -432,7 +439,8 @@
       "description": "Hai tĩnh mạch (trên và dưới) đi từ rốn phổi trái, phía trước động mạch chủ xuống, đổ vào tâm nhĩ trái.",
       "function": "Dẫn máu giàu oxy từ phổi trái về tâm nhĩ trái.",
       "clinical": "Tĩnh mạch phổi là nguồn phát sinh thường gặp của rung nhĩ; là đích của thủ thuật cô lập tĩnh mạch phổi.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Vena pulmonalis sinistra superior; Vena pulmonalis sinistra inferior"
     },
     {
       "id": "left_coronary_artery",
@@ -463,7 +471,8 @@
       "description": "Nhánh của động mạch vành trái, chạy trong rãnh gian thất trước xuống mỏm tim, cho các nhánh vách và nhánh chéo.",
       "function": "Cấp máu cho thành trước hai tâm thất và hai phần ba trước của vách gian thất.",
       "clinical": "Tắc nhánh gian thất trước là nguyên nhân thường gặp nhất của nhồi máu cơ tim thành trước.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Arteria interventricularis anterior"
     },
     {
       "id": "circumflex_artery",
@@ -477,7 +486,8 @@
       "layer": 0,
       "description": "Nhánh của động mạch vành trái, chạy trong rãnh vành vòng ra sau bên trái tim.",
       "function": "Cấp máu cho tâm nhĩ trái và thành bên, thành sau tâm thất trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Arteria circumflexa cordis"
     },
     {
       "id": "right_coronary_artery",
@@ -521,7 +531,8 @@
       "layer": 0,
       "description": "Bắt đầu ở mỏm tim, đi lên trong rãnh gian thất trước cùng nhánh gian thất trước, vòng sang trái trong rãnh vành rồi đổ vào xoang vành.",
       "function": "Dẫn máu tĩnh mạch từ thành trước tim về xoang vành.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Vena magna cordis"
     },
     {
       "id": "middle_cardiac_vein",
@@ -535,7 +546,8 @@
       "layer": 0,
       "description": "Đi trong rãnh gian thất sau cùng nhánh gian thất sau, đổ vào xoang vành.",
       "function": "Dẫn máu tĩnh mạch từ mặt hoành của tim về xoang vành.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Vena media cordis"
     },
     {
       "id": "inferior_vein_lv",
@@ -550,7 +562,8 @@
       "layer": 0,
       "description": "Đi trên mặt hoành của tâm thất trái, đổ vào xoang vành hoặc tĩnh mạch tim lớn.",
       "function": "Dẫn máu tĩnh mạch từ mặt dưới tâm thất trái.",
-      "source": "BẢN NHÁP – chưa có cố vấn duyệt"
+      "source": "BẢN NHÁP – chưa có cố vấn duyệt",
+      "nameLatinTA2": "Vena inferior ventriculi sinistri"
     }
   ],
   "questions": [

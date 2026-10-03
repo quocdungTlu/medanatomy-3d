@@ -26,6 +26,7 @@ export function InfoPanel() {
         <div>
           <h2 className="text-lg font-semibold leading-tight">{s.nameVi}</h2>
           <p className="text-sm italic text-slate-400">{s.nameLatin}</p>
+          {s.nameLatinTA2 && <p className="text-xs italic text-slate-500">TA2: {s.nameLatinTA2}</p>}
           {s.nameEn && <p className="text-xs text-slate-500">{s.nameEn}</p>}
         </div>
         <button className="btn-icon btn-ghost" onClick={() => select(null)} aria-label="Đóng">
