@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { content, groupsOrdered } from '../content'
 import { useAppStore } from '../store/useAppStore'
-import { readHistory, type LocalQuizRecord } from '../lib/localHistory'
+import { readHistory, readWrongQuestions, type LocalQuizRecord } from '../lib/localHistory'
+import { useEscape } from '../lib/useEscape'
 import { fetchRemoteHistory } from '../lib/supabase'
 
 /** Hộp chọn chủ đề và số câu trước khi bắt đầu Quiz. */
@@ -9,6 +10,8 @@ export function QuizSetup({ onClose }: { onClose: () => void }) {
   const [tags, setTags] = useState<string[]>([])
   const [count, setCount] = useState(10)
   const [history, setHistory] = useState<LocalQuizRecord[]>(() => readHistory().slice(0, 5))
+  const wrong = readWrongQuestions().filter((id) => content.questions.some((q) => q.id === id))
+  useEscape(onClose)
   useEffect(() => {
     fetchRemoteHistory(5).then((remote) => { if (remote.length) setHistory(remote) }).catch(() => {})
   }, [])
@@ -59,6 +62,14 @@ export function QuizSetup({ onClose }: { onClose: () => void }) {
           </div>
         )}
 
+        {wrong.length > 0 && (
+          <button
+            className="btn-ghost mb-2 w-full border-amber-500/40 text-amber-200"
+            onClick={() => { useAppStore.getState().startQuiz({ count: Math.min(20, wrong.length), onlyIds: wrong }); onClose() }}
+          >
+            Ôn {wrong.length} câu từng sai
+          </button>
+        )}
         <div className="flex gap-2">
           <button className="btn-primary flex-1" onClick={start} disabled={available.length === 0}>
             Bắt đầu

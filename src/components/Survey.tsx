@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEscape } from '../lib/useEscape'
 import { submitSurvey } from '../lib/survey'
 import { groupsOrdered } from '../content'
 
@@ -11,6 +12,7 @@ export function Survey({ onClose }: { onClose: () => void }) {
   const [next, setNext] = useState<string | null>(null)
   const [year, setYear] = useState<string | null>(null)
   const [sent, setSent] = useState(false)
+  useEscape(onClose)
 
   const submit = async () => {
     await submitSurvey({ price_per_month: price ?? '', next_system: next ?? '', year: year ?? '', current_system: groupsOrdered.length ? 'cardiovascular' : '' })

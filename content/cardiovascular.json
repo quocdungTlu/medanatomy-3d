@@ -1,7 +1,7 @@
 {
   "system": "cardiovascular",
   "systemNameVi": "Hệ tim mạch",
-  "version": "0.2.0-draft",
+  "version": "0.3.0-draft",
   "modelUrl": "/models/heart.glb",
   "modelAttribution": [
     "BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan",
@@ -816,6 +816,542 @@
       "difficulty": 2,
       "tags": [
         "great_veins"
+      ]
+    },
+    {
+      "id": "q025",
+      "type": "click",
+      "prompt": "Nhấp vào buồng tim có thành dày nhất",
+      "answerStructureId": "left_ventricle",
+      "difficulty": 2,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q026",
+      "type": "click",
+      "prompt": "Nhấp vào buồng tim chứa nút xoang nhĩ",
+      "answerStructureId": "right_atrium",
+      "difficulty": 2,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q027",
+      "type": "click",
+      "prompt": "Nhấp vào buồng tim bơm máu lên phổi",
+      "answerStructureId": "right_ventricle",
+      "difficulty": 1,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q028",
+      "type": "click",
+      "prompt": "Nhấp vào buồng tim nằm sau nhất, tạo nên nền tim",
+      "answerStructureId": "left_atrium",
+      "difficulty": 2,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q029",
+      "type": "click",
+      "prompt": "Nhấp vào cơ nhú của tâm thất phải",
+      "answerStructureId": "papillary_muscles_rv",
+      "difficulty": 3,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q030",
+      "type": "click",
+      "prompt": "Nhấp vào cơ nhú của tâm thất trái",
+      "answerStructureId": "papillary_muscle_lv",
+      "difficulty": 3,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q031",
+      "type": "name",
+      "targetStructureId": "left_ventricle",
+      "distractorIds": [
+        "right_ventricle",
+        "left_atrium",
+        "right_atrium"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q032",
+      "type": "name",
+      "targetStructureId": "right_ventricle",
+      "distractorIds": [
+        "left_ventricle",
+        "right_atrium",
+        "pulmonary_trunk"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q033",
+      "type": "name",
+      "targetStructureId": "left_atrium",
+      "distractorIds": [
+        "right_atrium",
+        "left_ventricle",
+        "left_pulmonary_veins"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q034",
+      "type": "name",
+      "targetStructureId": "papillary_muscles_rv",
+      "distractorIds": [
+        "papillary_muscle_lv",
+        "tricuspid_valve",
+        "right_ventricle"
+      ],
+      "difficulty": 3,
+      "tags": [
+        "chambers"
+      ]
+    },
+    {
+      "id": "q035",
+      "type": "click",
+      "prompt": "Nhấp vào van ngăn máu trào ngược từ thất trái lên nhĩ trái",
+      "answerStructureId": "mitral_valve",
+      "difficulty": 2,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q036",
+      "type": "click",
+      "prompt": "Nhấp vào van có ba lá nằm giữa nhĩ phải và thất phải",
+      "answerStructureId": "tricuspid_valve",
+      "difficulty": 2,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q037",
+      "type": "click",
+      "prompt": "Nhấp vào van nằm ở lỗ thân động mạch phổi",
+      "answerStructureId": "pulmonary_valve",
+      "difficulty": 2,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q038",
+      "type": "click",
+      "prompt": "Nhấp vào van mà ngay phía trên nó xuất phát hai động mạch vành",
+      "answerStructureId": "aortic_valve",
+      "difficulty": 3,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q039",
+      "type": "name",
+      "targetStructureId": "mitral_valve",
+      "distractorIds": [
+        "tricuspid_valve",
+        "aortic_valve",
+        "pulmonary_valve"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q040",
+      "type": "name",
+      "targetStructureId": "tricuspid_valve",
+      "distractorIds": [
+        "mitral_valve",
+        "pulmonary_valve",
+        "aortic_valve"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q041",
+      "type": "name",
+      "targetStructureId": "pulmonary_valve",
+      "distractorIds": [
+        "aortic_valve",
+        "tricuspid_valve",
+        "pulmonary_trunk"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "valves"
+      ]
+    },
+    {
+      "id": "q042",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch chủ lên",
+      "answerStructureId": "ascending_aorta",
+      "difficulty": 1,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q043",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch chủ ngực",
+      "answerStructureId": "thoracic_aorta",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q044",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch cảnh chung trái",
+      "answerStructureId": "left_common_carotid",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q045",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch cảnh chung phải",
+      "answerStructureId": "right_common_carotid",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q046",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch dưới đòn phải",
+      "answerStructureId": "right_subclavian",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q047",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch phổi phải",
+      "answerStructureId": "right_pulmonary_artery",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q048",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch phổi trái",
+      "answerStructureId": "left_pulmonary_artery",
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q049",
+      "type": "click",
+      "prompt": "Nhấp vào nhánh thứ ba của cung động mạch chủ",
+      "answerStructureId": "left_subclavian",
+      "difficulty": 3,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q050",
+      "type": "name",
+      "targetStructureId": "aortic_arch",
+      "distractorIds": [
+        "ascending_aorta",
+        "thoracic_aorta",
+        "pulmonary_trunk"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q051",
+      "type": "name",
+      "targetStructureId": "brachiocephalic_trunk",
+      "distractorIds": [
+        "left_common_carotid",
+        "right_common_carotid",
+        "right_subclavian"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q052",
+      "type": "name",
+      "targetStructureId": "pulmonary_trunk",
+      "distractorIds": [
+        "ascending_aorta",
+        "superior_vena_cava",
+        "left_pulmonary_artery"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q053",
+      "type": "name",
+      "targetStructureId": "right_subclavian",
+      "distractorIds": [
+        "left_subclavian",
+        "right_common_carotid",
+        "brachiocephalic_trunk"
+      ],
+      "difficulty": 3,
+      "tags": [
+        "great_arteries"
+      ]
+    },
+    {
+      "id": "q054",
+      "type": "click",
+      "prompt": "Nhấp vào các tĩnh mạch phổi phải",
+      "answerStructureId": "right_pulmonary_veins",
+      "difficulty": 2,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q055",
+      "type": "click",
+      "prompt": "Nhấp vào các tĩnh mạch phổi trái",
+      "answerStructureId": "left_pulmonary_veins",
+      "difficulty": 2,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q056",
+      "type": "click",
+      "prompt": "Nhấp vào tĩnh mạch cánh tay đầu phải",
+      "answerStructureId": "right_brachiocephalic_vein",
+      "difficulty": 2,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q057",
+      "type": "click",
+      "prompt": "Nhấp vào tĩnh mạch đi qua cơ hoành ở mức đốt sống ngực VIII",
+      "answerStructureId": "inferior_vena_cava",
+      "difficulty": 3,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q058",
+      "type": "name",
+      "targetStructureId": "superior_vena_cava",
+      "distractorIds": [
+        "inferior_vena_cava",
+        "right_brachiocephalic_vein",
+        "ascending_aorta"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q059",
+      "type": "name",
+      "targetStructureId": "left_brachiocephalic_vein",
+      "distractorIds": [
+        "right_brachiocephalic_vein",
+        "superior_vena_cava",
+        "left_subclavian"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q060",
+      "type": "name",
+      "targetStructureId": "left_pulmonary_veins",
+      "distractorIds": [
+        "right_pulmonary_veins",
+        "left_pulmonary_artery",
+        "pulmonary_trunk"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "great_veins"
+      ]
+    },
+    {
+      "id": "q061",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch vành trái",
+      "answerStructureId": "left_coronary_artery",
+      "difficulty": 2,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q062",
+      "type": "click",
+      "prompt": "Nhấp vào tĩnh mạch tim lớn",
+      "answerStructureId": "great_cardiac_vein",
+      "difficulty": 3,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q063",
+      "type": "click",
+      "prompt": "Nhấp vào tĩnh mạch tim giữa",
+      "answerStructureId": "middle_cardiac_vein",
+      "difficulty": 3,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q064",
+      "type": "click",
+      "prompt": "Nhấp vào xoang vành",
+      "answerStructureId": "coronary_sinus",
+      "difficulty": 2,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q065",
+      "type": "click",
+      "prompt": "Nhấp vào động mạch thường cấp máu cho nút nhĩ thất",
+      "answerStructureId": "right_coronary_artery",
+      "difficulty": 3,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q066",
+      "type": "name",
+      "targetStructureId": "anterior_interventricular_artery",
+      "distractorIds": [
+        "circumflex_artery",
+        "right_coronary_artery",
+        "great_cardiac_vein"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q067",
+      "type": "name",
+      "targetStructureId": "circumflex_artery",
+      "distractorIds": [
+        "anterior_interventricular_artery",
+        "left_coronary_artery",
+        "inferior_vein_lv"
+      ],
+      "difficulty": 3,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q068",
+      "type": "name",
+      "targetStructureId": "coronary_sinus",
+      "distractorIds": [
+        "middle_cardiac_vein",
+        "great_cardiac_vein",
+        "inferior_vena_cava"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q069",
+      "type": "name",
+      "targetStructureId": "left_coronary_artery",
+      "distractorIds": [
+        "right_coronary_artery",
+        "anterior_interventricular_artery",
+        "circumflex_artery"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "coronary"
+      ]
+    },
+    {
+      "id": "q070",
+      "type": "name",
+      "targetStructureId": "middle_cardiac_vein",
+      "distractorIds": [
+        "great_cardiac_vein",
+        "inferior_vein_lv",
+        "coronary_sinus"
+      ],
+      "difficulty": 3,
+      "tags": [
+        "coronary"
       ]
     }
   ]

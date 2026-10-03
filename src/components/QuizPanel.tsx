@@ -3,7 +3,7 @@ import { useAppStore } from '../store/useAppStore'
 import { content, structuresById } from '../content'
 import { currentQuestion, nameOptions, score, wrongAnswers } from '../quiz/engine'
 import { saveQuizSession } from '../lib/supabase'
-import { appendHistory } from '../lib/localHistory'
+import { appendHistory, updateWrongQuestions } from '../lib/localHistory'
 import { renderResultImage, shareOrDownload } from '../lib/shareImage'
 import { track } from '../lib/analytics'
 import type { NameQuestion } from '../content/schema'
@@ -25,6 +25,7 @@ export function QuizPanel() {
   useEffect(() => {
     if (!quiz?.finishedAt) return
     const sc = score(quiz)
+    updateWrongQuestions(quiz.answers)
     appendHistory({ at: new Date(quiz.finishedAt).toISOString(), system: content.system, tags: quiz.tags ?? [], correct: sc.correct, total: sc.total, durationMs: sc.durationMs })
     void saveQuizSession({
       system: content.system,

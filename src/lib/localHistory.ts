@@ -42,3 +42,15 @@ export function hasOnboarded(): boolean {
 export function setOnboarded() {
   try { localStorage.setItem(ONBOARD_KEY, '1') } catch { /* ignore */ }
 }
+
+const WRONG_KEY = 'medanatomy.wrongQuestions.v1'
+/** Id câu hỏi từng trả lời sai (chưa trả lời đúng lại). */
+export function readWrongQuestions(): string[] {
+  try { return JSON.parse(localStorage.getItem(WRONG_KEY) ?? '[]') as string[] } catch { return [] }
+}
+/** Cập nhật sau mỗi phiên: thêm câu sai, bỏ câu đã trả lời đúng. */
+export function updateWrongQuestions(answers: { questionId: string; correct: boolean }[]) {
+  const set = new Set(readWrongQuestions())
+  for (const a of answers) { if (a.correct) set.delete(a.questionId); else set.add(a.questionId) }
+  try { localStorage.setItem(WRONG_KEY, JSON.stringify([...set])) } catch { /* ignore */ }
+}

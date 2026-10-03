@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useEscape } from '../lib/useEscape'
 import { content } from '../content'
 
 /** Nút ⓘ mở hộp Giới thiệu: disclaimer y khoa và ghi công model (bắt buộc theo license). */
 export function About() {
   const [open, setOpen] = useState(false)
+  useEscape(() => setOpen(false))
   return (
     <>
       <button className="btn-icon btn-ghost" onClick={() => setOpen(true)} aria-label="Giới thiệu và nguồn mô hình" title="Giới thiệu">

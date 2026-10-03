@@ -80,3 +80,11 @@ describe('nameOptions', () => {
     expect(opts.map((o) => o.id)).toContain(q.targetStructureId)
   })
 })
+
+describe('onlyIds', () => {
+  it('chỉ lấy câu trong danh sách', () => {
+    const ids = content.questions.slice(0, 3).map((q) => q.id)
+    const qs = pickQuestions(content.questions, { count: 10, onlyIds: ids, rng: seeded() })
+    expect(qs.map((q) => q.id).sort()).toEqual([...ids].sort())
+  })
+})

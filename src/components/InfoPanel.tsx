@@ -4,6 +4,7 @@ import { isReviewed, structuresById } from '../content'
 import { reportContent, supabase } from '../lib/supabase'
 import { track } from '../lib/analytics'
 import { markViewed } from '../lib/progress'
+import { useEscape } from '../lib/useEscape'
 
 /** Bảng thông tin cấu trúc đang chọn. Mobile: bottom sheet; desktop: panel phải. */
 export function InfoPanel() {
@@ -12,6 +13,7 @@ export function InfoPanel() {
   const isolatedId = useAppStore((s) => s.isolatedId)
   const s = selectedId ? structuresById[selectedId] : undefined
   useEffect(() => { if (open && selectedId) markViewed(selectedId) }, [open, selectedId])
+  useEscape(() => { if (useAppStore.getState().infoOpen) useAppStore.getState().select(null) })
   if (!open || !s) return null
   const { select, isolate } = useAppStore.getState()
 

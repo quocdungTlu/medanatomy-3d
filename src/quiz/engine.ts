@@ -22,6 +22,8 @@ export interface QuizSession {
 export interface QuizOptions {
   count?: number
   tags?: string[]
+  /** Chỉ lấy các câu có id trong danh sách (chế độ ôn câu sai) */
+  onlyIds?: string[]
   /** Hàm random có thể thay để test ổn định */
   rng?: () => number
 }
@@ -38,8 +40,9 @@ export function shuffle<T>(arr: T[], rng: () => number = Math.random): T[] {
 
 /** Chọn câu hỏi: lọc theo tag, trộn, lấy `count` câu, không lặp. */
 export function pickQuestions(pool: Question[], opts: QuizOptions = {}): Question[] {
-  const { count = 10, tags, rng = Math.random } = opts
-  const filtered = tags?.length ? pool.filter((q) => q.tags.some((t) => tags.includes(t))) : pool
+  const { count = 10, tags, onlyIds, rng = Math.random } = opts
+  let filtered = tags?.length ? pool.filter((q) => q.tags.some((t) => tags.includes(t))) : pool
+  if (onlyIds) { const set = new Set(onlyIds); filtered = filtered.filter((q) => set.has(q.id)) }
   return shuffle(filtered, rng).slice(0, Math.min(count, filtered.length))
 }
 

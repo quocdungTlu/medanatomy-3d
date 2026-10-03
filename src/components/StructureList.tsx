@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
 import { content, groupsOrdered, isReviewed, searchStructures } from '../content'
 import { readViewed, subscribeViewed } from '../lib/progress'
+import { useEscape } from '../lib/useEscape'
 
 /** Danh sách cấu trúc theo nhóm, tìm kiếm không dấu. Desktop: cột trái; mobile: bottom sheet. */
 export function StructureList() {
@@ -11,6 +12,7 @@ export function StructureList() {
   const [q, setQ] = useState('')
   const [viewed, setViewed] = useState(() => readViewed())
   useEffect(() => subscribeViewed(() => setViewed(readViewed())), [])
+  useEscape(() => { if (useAppStore.getState().listOpen) useAppStore.getState().setListOpen(false) })
 
   const results = useMemo(() => searchStructures(q), [q])
   const grouped = useMemo(
